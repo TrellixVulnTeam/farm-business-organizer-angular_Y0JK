@@ -1,0 +1,53 @@
+<div class="container-fluid page">
+  <app-page-headline [pageTitle]="pageTitle" [visibility]="true" [buttonText]="buttonText" (buttonClick)="openForm(0)"></app-page-headline>
+  <div class="page_content shadow p-3 position-relative">
+    <div class="page_content-data">
+
+      <table mat-table [dataSource]="partners" class="mat-elevation-z8">
+   
+        <ng-container matColumnDef="partnerId">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let partner"> {{partner.partnerId}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let partner"> {{partner.name}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef> Address </th>
+          <td mat-cell *matCellDef="let partner"> {{partner.address}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="idNumber">
+          <th mat-header-cell *matHeaderCellDef> JIB </th>
+          <td mat-cell *matCellDef="let partner"> {{partner.idNumber}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="pdvNumber">
+          <th mat-header-cell *matHeaderCellDef> PIB </th>
+          <td mat-cell *matCellDef="let partner"> {{partner.pdvNumber}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef> Description </th>
+          <td mat-cell *matCellDef="let partner"> {{partner.description}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Buttons" >
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let partner">
+            <button mat-button (click)="openForm(partner.partnerId)"><i class="fa-solid fa-pen-to-square"></i></button>
+            <button mat-button (click)="deletePartner(partner.partnerId)"><i class="fa-solid fa-trash-can"></i></button>
+          </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+
+    </div>
+  </div>
+</div>

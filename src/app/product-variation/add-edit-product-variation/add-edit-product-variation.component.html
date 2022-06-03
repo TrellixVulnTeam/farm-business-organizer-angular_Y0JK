@@ -1,0 +1,44 @@
+<div class="container-fluid page">
+    <app-page-headline [pageTitle]="pageTitle" [visibility]="false"></app-page-headline>
+    <div class="page_content shadow p-3 position-relative">
+      <div class="page_content-data">
+  
+        <form class="farm-form" novalidate (ngSubmit)="save()" [formGroup]="variationForm"> 
+            <h1 class="display-4"></h1>
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Production Date</mat-label>
+                <textarea matInput 
+                id="productionDateId"
+                type="Date"
+                formControlName="productionDate"></textarea>
+              </mat-form-field>
+        
+        
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Expiration Date</mat-label>
+                <textarea matInput 
+                id="expirationDateId"
+                type="Date"
+                formControlName="expirationDate"></textarea>
+              </mat-form-field>
+        
+        
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Amount</mat-label>
+                <input matInput
+                id = "amountId"
+                type="number"
+                formControlName="amount">
+            </mat-form-field>
+        
+            <button  mat-raised-button color="primary" type="submit"
+            [title]="variationForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+            [disabled]="!variationForm.valid">Save</button>
+            <button  mat-raised-button color="warn" class="mx-2" (click)="(onSaveComplete())">Cancel</button>
+        </form>
+        
+  
+      </div>
+    </div>
+  </div>
+

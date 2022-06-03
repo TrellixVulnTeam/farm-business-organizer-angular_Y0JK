@@ -1,0 +1,90 @@
+<div class="container-fluid page">
+    <app-page-headline [pageTitle]="pageTitle" [visibility]="false"></app-page-headline>
+    <div class="page_content shadow p-3 position-relative">
+      <div class="page_content-data">
+  
+        
+        <form class="company-form" novalidate (ngSubmit)="save()" [formGroup]="companyForm"> 
+        
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Company name</mat-label>
+                <input matInput 
+                id="nameId"
+                type="text"
+                formControlName="name"
+                [ngClass]="{'is-invalid': (companyForm.get('name').touched ||
+                                                    companyForm.get('name').dirty) &&
+                                                    !companyForm.get('name').valid }" />
+                <mat-error *ngIf="companyForm.get('name').errors?.['required']">
+                    Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        
+        
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Address</mat-label>
+                <input matInput 
+                id="addressId"
+                type="text"
+                formControlName="address">
+                <mat-error *ngIf="companyForm.get('address').errors?.['required']">
+                    Address is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        
+        
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Phone</mat-label>
+                <input matInput
+                id = "phoneId"
+                type="text"
+                formControlName="phone">
+            </mat-form-field>
+            
+        
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput 
+                placeholder="pat@example.com"
+                id = "emailId"
+                type="text"
+                formControlName="email">
+              </mat-form-field>
+        
+        
+              <mat-form-field class="full-width" appearance="fill">
+                <mat-label>JIB</mat-label>
+                <input matInput
+                id = "jibId"
+                type="text"
+                formControlName="idNumber">
+            </mat-form-field>
+        
+        
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>PIB</mat-label>
+                <input matInput
+                id = "pibId"
+                type="text"
+                formControlName="pdvNumber">
+            </mat-form-field>
+        
+        
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Bank</mat-label>
+                <input matInput
+                id = "bankId"
+                type="text"
+                formControlName="bankNumber">
+            </mat-form-field>
+        
+            <button  mat-raised-button color="primary" type="submit"
+            [title]="companyForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+            [disabled]="!companyForm.valid">Save</button>
+        </form>
+        
+  
+      </div>
+    </div>
+  </div>
+

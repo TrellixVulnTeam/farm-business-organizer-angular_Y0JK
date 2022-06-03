@@ -1,0 +1,48 @@
+<div class="container-fluid page">
+    <app-page-headline [pageTitle]="pageTitle" [visibility]="false"></app-page-headline>
+    <div class="page_content shadow p-3 position-relative">
+      <div class="page_content-data">
+  
+        <form class="form" novalidate (ngSubmit)="save()" [formGroup]="productForm"> 
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Product name</mat-label>
+                <input matInput 
+                id="nameId"
+                type="text"
+                formControlName="name"
+                [ngClass]="{'is-invalid': (productForm.get('name').touched ||
+                                                    productForm.get('name').dirty) &&
+                                                    !productForm.get('name').valid }" />
+                <mat-error *ngIf="productForm.get('name').errors?.['required']">
+                    Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        
+        
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Barcode</mat-label>
+                <textarea matInput 
+                id="barcodeId"
+                type="text"
+                formControlName="barcode"></textarea>
+              </mat-form-field>
+        
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Description</mat-label>
+                <input matInput
+                id = "descriptionId"
+                type="text"
+                formControlName="description">
+            </mat-form-field>
+        
+            <button  mat-raised-button color="primary" type="submit"
+            [title]="productForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+            [disabled]="!productForm.valid">Save</button>
+            <button  mat-raised-button color="warn" class="mx-2" (click)="(onSaveComplete())">Cancel</button>
+        </form>
+        
+  
+      </div>
+    </div>
+  </div>
+

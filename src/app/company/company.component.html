@@ -1,0 +1,45 @@
+<div class="container-fluid page">
+  <app-page-headline [pageTitle]="pageTitle" [visibility]="true" [buttonText]="buttonText" (buttonClick)="openForm(0)">
+  </app-page-headline>
+  <div class="page_content shadow p-3 position-relative">
+    <div class="page_content-data">
+
+      <div *ngFor="let company of companies">
+        <mat-card class="pb-0" (click)="openFarms(company.companyID)">
+
+          <div class="px-md-2">
+            <div class="mb-3">
+              <mat-card-title>{{company.name}}</mat-card-title>
+              <mat-card-title>ID: {{company.companyID}}</mat-card-title>
+            </div>
+            <div class="d-flex justify-content-evenly">
+              <mat-card-subtitle>Address: {{company.address}}</mat-card-subtitle>
+              <mat-card-subtitle>Phone: {{company.phone}}</mat-card-subtitle>
+              <mat-card-subtitle>Email: {{company.email}}</mat-card-subtitle>
+              <mat-card-subtitle>PDV: {{company.pdvNumber}}</mat-card-subtitle>
+              <mat-card-subtitle>JIB: {{company.idNumber}}</mat-card-subtitle>
+              <mat-card-subtitle>Bank: {{company.bankNumber}}</mat-card-subtitle>
+            </div>
+          </div>
+          <div class="">
+            <mat-card-actions class="btn-group btn-group" role="group" aria-label="forward">
+              <button mat-button (click)="openForm(company.companyID)">EDIT</button>
+            <button mat-button (click)="deleteCompany(company.companyID)">DELETE</button>
+            </mat-card-actions>
+
+            <!-- <mat-card-actions class="btn-group btn-group" role="group" aria-label="forward">
+              <button class="btn btn-outline-dark" (click)="openFarms(company.companyID)">FARMS</button>
+              <button class="btn btn-outline-dark" (click)="openWarehouses(company.companyID)">WAREHOUSES</button>
+              <button class="btn btn-outline-dark" (click)="openPartners(company.companyID)">PARTNERS</button>
+              <button class="btn btn-outline-dark" (click)="openProducts(company.companyID)">PRODUCTS</button>
+            </mat-card-actions> -->
+          </div>
+
+          
+        </mat-card>
+
+
+      </div>
+    </div>
+  </div>
+</div>

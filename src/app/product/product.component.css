@@ -1,0 +1,53 @@
+table {
+    width: 100%;
+  }
+
+  .page {
+    color: white;
+    padding: 0 1rem;
+    background: #f1f5f9;
+  }
+
+  .page_content {
+    min-height: calc(100vh - 140px);
+    border-radius: 10px;
+    margin-top: -2.5rem;
+    background: rgb(250, 250, 250);
+    color: black;
+  }
+  .page-data {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  mat-card {
+    margin: 25px 0;
+    cursor: pointer;
+  }
+
+  mat-card:hover {
+    background-color: #f1f5f9;
+  }
+
+  .mat-column-Buttons {
+    text-align: right;
+    justify-content: flex-end;
+  }
+
+  .fa-trash-can {
+    color: red;
+  }
+
+  i {
+    font-size: 1rem;
+  }
+
+  tr.example-element-row:not(.example-expanded-row):hover {
+    background: whitesmoke;
+  }
+  
+  tr.example-element-row:not(.example-expanded-row):active {
+    background: #efefef;
+  }
+  

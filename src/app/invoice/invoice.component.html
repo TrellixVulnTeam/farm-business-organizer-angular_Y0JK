@@ -1,0 +1,60 @@
+
+
+  <div class="card">
+    <div class="card-header">
+      {{pageTitle}}
+      <button mat-raised-button color="primary" [routerLink]="['/products']">Add Product</button>
+    </div>
+  
+    <div class="card-body"
+         *ngFor="let invoice of invoices">
+  
+      <div class="row">
+  
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-3">Invoice Id:</div>
+            <div class="col-md-6">{{invoice.invoiceId}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Number:</div>
+            <div class="col-md-6">{{invoice.number}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Date:</div>
+            <div class="col-md-6">{{invoice.creationDate}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Description:</div>
+            <div class="col-md-6">{{invoice.description}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Price:</div>
+            <div class="col-md-6">{{invoice.totalPrice}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Partner:</div>
+            <div class="col-md-6">{{invoice.partnerId}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Items:</div>
+            <div class="col-md-6">{{invoice.items}}</div>
+          </div>
+
+         
+  
+        
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <button class="m-2"  mat-raised-button color="primary" [routerLink]="['/companies']">Edit Farm</button>
+    
+          <button mat-raised-button color="primary" [routerLink]="[]">Delete Farm</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  
+  <div class="alert alert-danger"
+       *ngIf="errorMessage">{{errorMessage}}
+  </div>

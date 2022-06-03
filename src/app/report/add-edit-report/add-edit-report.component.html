@@ -1,0 +1,86 @@
+<div class="container-fluid page">
+    <app-page-headline [pageTitle]="pageTitle" [visibility]="false"></app-page-headline>
+    <div class="page_content shadow p-3 position-relative">
+      <div class="page_content-data">
+  
+        <form class="form" novalidate (ngSubmit)="save()" [formGroup]="reportForm"> 
+            <h1 class="display-4"></h1>
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Naziv</mat-label>
+                <input matInput 
+                id="nameId"
+                type="text"
+                formControlName="name"
+                [ngClass]="{'is-invalid': (reportForm.get('name').touched ||
+                                                    reportForm.get('name').dirty) &&
+                                                    !reportForm.get('name').valid }" />
+                <mat-error *ngIf="reportForm.get('name').errors?.['required']">
+                    Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        
+        
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Description</mat-label>
+                <textarea matInput 
+                id="madeOnId"
+                type="text"
+                formControlName="madeOn"></textarea>
+              </mat-form-field>
+        
+        
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Proizvodnja</mat-label>
+                <input matInput
+                id = "eggProductionId"
+                type="number"
+                formControlName="eggProduction">
+            </mat-form-field>
+        
+        
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Uginuća</mat-label>
+                <input matInput
+                id = "deathsId"
+                type="number"
+                formControlName="deaths">
+            </mat-form-field>
+        
+        
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Vitamini</mat-label>
+                <input matInput
+                id = "vitaminsId"
+                type="text"
+                formControlName="vitamins">
+            </mat-form-field>
+        
+        
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Hrana</mat-label>
+                <input matInput
+                id = "foodAmountId"
+                type="number"
+                formControlName="foodAmount">
+            </mat-form-field>
+        
+        
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Koeficijent</mat-label>
+                <input matInput
+                id = "coefficientId"
+                type="number"
+                formControlName="coefficient">
+            </mat-form-field>
+        
+            <button  mat-raised-button color="primary" type="submit"
+            [title]="reportForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+            [disabled]="!reportForm.valid">Save</button>
+            <button  mat-raised-button color="warn" class="mx-2" (click)="(onSaveComplete())">Cancel</button>
+        </form>
+        
+  
+      </div>
+    </div>
+  </div>
+

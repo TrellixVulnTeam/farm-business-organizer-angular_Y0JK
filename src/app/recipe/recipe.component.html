@@ -1,0 +1,56 @@
+
+
+  <div class="card">
+    <div class="card-header">
+      {{pageTitle}}
+      <button mat-raised-button color="primary" [routerLink]="['/products']">Add Product</button>
+    </div>
+  
+    <div class="card-body"
+         *ngFor="let recipe of recipes">
+  
+      <div class="row">
+  
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-3">Recipe Id:</div>
+            <div class="col-md-6">{{recipe.recipeId}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Name:</div>
+            <div class="col-md-6">{{recipe.name}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Cereals:</div>
+            <div class="col-md-6">{{recipe.amountCereal}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Amount:</div>
+            <div class="col-md-6">{{recipe.amountProduct}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Product:</div>
+            <div class="col-md-6">{{recipe.product}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Cereals:</div>
+            <div class="col-md-6">{{recipe.cereals}}</div>
+          </div>
+
+         
+  
+        
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <button class="m-2"  mat-raised-button color="primary" [routerLink]="['/companies']">Edit Farm</button>
+    
+          <button mat-raised-button color="primary" [routerLink]="[]">Delete Farm</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  
+  <div class="alert alert-danger"
+       *ngIf="errorMessage">{{errorMessage}}
+  </div>

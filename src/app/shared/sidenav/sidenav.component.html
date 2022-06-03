@@ -1,0 +1,21 @@
+<mat-nav-list>
+    <div class="logo py-4">
+        <img src="./assets/logo.svg" alt="Company Logo" />
+    </div>
+    <mat-divider></mat-divider>
+    <h2 matSubheader class="mt-2">APPLICATIONS</h2>
+  
+    <a mat-list-item routerLinkActive="list-item-active" [routerLink]="['/companies']">
+      <mat-icon>home</mat-icon> Companies
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" [routerLink]="['/companies/1/farms']">
+      <mat-icon>dashboard</mat-icon> Farms
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" [routerLink]="['/companies/1/partners']">  
+      <mat-icon>dashboard</mat-icon> Partners </a>
+    <a mat-list-item  routerLinkActive="list-item-active" [routerLink]="['/companies/1/products']">
+       <mat-icon>dashboard</mat-icon> Products </a>
+    <a mat-list-item routerLinkActive="list-item-active" [routerLink]="['/companies/1/warehouses']"> 
+      <mat-icon>dashboard</mat-icon> Warehouses </a>
+    <a mat-list-item> <mat-icon>edit</mat-icon> Link 6 </a>
+  </mat-nav-list>

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Company 1",
+    "address": "Address 1",
+    "phone": "11111111",
+    "email": "test@mail.com",
+    "jib": 111,
+    "pib": 111,
+    "bank": 111
+  },
+  {
+    "id": 2,
+    "name": "Company 2",
+    "address": "Address 2",
+    "phone": "22222222",
+    "email": "test@mail.com",
+    "jib": 222,
+    "pib": 222,
+    "bank": 222
+  },
+  {
+    "id": 3,
+    "name": "Company 3",
+    "address": "Address 3",
+    "phone": "33333333",
+    "email": "test@mail.com",
+    "jib": 333,
+    "pib": 333,
+    "bank": 333
+  },
+  {
+    "id": 4,
+    "name": "Company 4",
+    "address": "Address 4",
+    "phone": "44444444",
+    "email": "test@mail.com",
+    "jib": 444,
+    "pib": 444,
+    "bank": 444
+  }
+]

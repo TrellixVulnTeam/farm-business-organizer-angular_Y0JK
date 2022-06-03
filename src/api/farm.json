@@ -1,0 +1,33 @@
+[
+    {
+        "farmId": 1,
+        "name": "Farma 1",
+        "description": "Farma 1 desc",
+        "capacity": 1000,
+        "companyId": 1
+        
+    },
+    {
+        "farmId": 2,
+        "name": "Farma 2",
+        "description": "Farma 2 desc",
+        "capacity": 2000,
+        "companyId": 2
+    },
+    {
+        "farmId": 3,
+        "name": "Farma 3",
+        "description": "Farma 3 desc",
+        "capacity": 3000,
+        "companyId": 3
+        
+    },
+    {
+        "farmId": 4,
+        "name": "Farma 4",
+        "description": "Farma 4 desc",
+        "capacity": 4000,
+        "companyId": 1
+        
+    }
+]
